@@ -1,0 +1,58 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">New Client</h4>
+          </div>
+          <div class="card-content">
+            <form (submit) ="addClients()">
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Client ID</label>
+                    <input type="text" [(ngModel)]= "_id" name="_id" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Client Name</label>
+                    <input type="email" [(ngModel)]= "client_name" name="client_name" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Phone number</label>
+                    <input type="text" [(ngModel)]= "phone_no" name="phone_no" class="form-control">
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Email address</label>
+                    <input type="text" [(ngModel)]= "email_address" name="email_address" class="form-control">
+                  </div>
+                </div>
+
+              </div>
+              <button type="submit" class="btn btn-danger pull-right">Submit</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

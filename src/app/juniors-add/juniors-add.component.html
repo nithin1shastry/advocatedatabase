@@ -1,0 +1,68 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">New Junior</h4>
+          </div>
+          <div class="card-content">
+            <form (submit) = "addNewJuniors()">
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">JUNIOR ID</label>
+                    <input type="text" [(ngModel)]= "j_id" name="j_id" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">JUNIOR NAME</label>
+                    <input type="text" [(ngModel)]= "junior_name" name="junior_name"class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">PHONE NUMBER</label>
+                    <input type="text" [(ngModel)]= "phone_no" name="phone_no" class="form-control">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">SALARY</label>
+                    <input type="text" [(ngModel)]= "salary" name="salary" class="form-control">
+                  </div>  
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">EMAIL ADDRESS</label>
+                    <input type="text" [(ngModel)]= "email_address" name="email_address" class="form-control">
+                  </div>
+                </div>
+
+              </div>
+              <button type="submit" class="btn btn-danger pull-right">Submit</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

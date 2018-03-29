@@ -1,0 +1,49 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header" data-background-color="red">
+                    <a routerLink='/juniors/juniors-add' class="btn btn-muted-primary" style="float:right">+</a>
+                      <h4 class="title">Juniors</h4>
+                      <p class="category">Complete your profile</p>
+                      <!--p class="category">Here is a subtitle for this table</p-->
+                  </div>
+                  <div class="card-content table-responsive">
+                      <table class="table">
+                          <thead class="text-danger">
+                              <tr>
+                                  <th>Junior ID</th>
+                                  <th>Junior NAME</th>
+                                  <th>PHONE NUMBER</th>
+                                  <th>Salary</th>
+                                  <th>Email Address</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let junior of juniors">
+                                <td class="col-md-3">
+                                    {{junior.JUNIOR_ID}}
+                                </td>
+                                <td class="col-md-3">
+                                    {{junior.JUNIOR_NAME}}
+                                </td>
+                                <td class="col-md-3">
+                                    {{junior.PHONE_NO}}
+                                </td>
+                                <td class="col-md-3">
+                                    {{junior.SALARY}}
+                                </td>
+                                <td class="col-md-3">
+                                    {{junior.EMAIL_ADDRESS}}
+                                </td>
+                                </tr>
+                          </tbody>
+                      </table>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

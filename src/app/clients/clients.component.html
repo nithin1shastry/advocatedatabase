@@ -1,0 +1,50 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <a routerLink='/clients/clients-add' class="btn btn-muted-warning" style="float:right">+</a>
+                        <h4 class="title">Clients</h4>
+                        <p class="category">Client details</p>
+                        <!--p class="category">Here is a subtitle for this table</p-->
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead class="text-danger">
+                                <tr>
+                                    <th>CLIENT ID</th>
+                                    <th>CLIENT NAME</th>
+                                    <th>PHONE NUMBER</th>
+                                    <th>EMAIL ADDRESS</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let client of clients">
+                                <tr (click)="toggle(client)">
+                                    <td class="col-md-3">
+                                        {{client.CLIENT_ID}}
+                                    </td>
+                                    <td class="col-md-3">
+                                        {{client.CLIENT_NAME}}
+                                    </td>
+                                    <td class="col-md-3">
+                                        {{client.PHONE_NO}}
+                                    </td>
+                                    <td class="col-md-3">
+                                        {{client.EMAIL_ADDRESS}}
+                                    </td>
+                                </tr>
+                                <tr *ngIf="client.flag">
+                                    <td colspan="4">
+                                        <input type="text" [(ngModel)]=client.CLIENT_DESCRIPTION class="form-control">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

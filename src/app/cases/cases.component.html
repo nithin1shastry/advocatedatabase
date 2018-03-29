@@ -1,0 +1,98 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <div class="btn btn-muted-primary" routerLink="/cases/caseadd" style="float:right">+</div>
+                        <h4 class="title">My Cases</h4>
+                        <p class="category">List of cases that I handle</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead class="text-danger">
+                                <tr>
+                                    <th>Case ID</th>
+                                    <th>Case title</th>
+                                    <th>Case status</th>
+                                    <th>CLIENT ID</th>
+                                    <th>Charges</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cas of cases">
+                                    <td>
+                                        {{cas.CASE_ID}}
+                                    </td>
+                                    <td>
+                                        {{cas.CASE_TITLE}}
+                                    </td>
+                                    <td>
+                                        {{cas.CASE_STATUS}}
+                                    </td>
+                                    <td>
+                                        {{cas.CLIENT_ID}}
+                                    </td>
+                                    <td>
+                                        {{cas.CHARGE}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="red">
+                    <div class="btn btn-muted-primary" routerLink="/cases/juniorcaseadd" style="float:right">+</div>
+                    <h4 class=" title ">Cases Handled By Juniors</h4>
+                    <p class="category ">List of cases that Juniors handles</p>
+                </div>
+                <div class="card-content table-responsive ">
+                    <table class="table ">
+                        <thead class="text-danger ">
+                            <tr>
+                                <th>Junior ID</th>
+                                <th>Junior NAME</th>
+                                <th>Case ID</th>
+                                <th>Case TITLE</th>
+                                <th>Case status</th>
+                                <th>charges</th>
+                                <th>Client id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let jun_case of jun_cases">
+                                <td>
+                                    {{jun_case.JUNIOR_ID}}
+                                </td>
+                                <td>
+                                    {{jun_case.JUNIOR_NAME}}
+                                </td>
+                                <td>
+                                    {{jun_case.CASE_ID}}
+                                </td>
+                                <td>
+                                    {{jun_case.CASE_TITLE}}
+                                </td>
+                                <td>
+                                    {{jun_case.CASE_STATUS}}
+                                </td>
+                                <td>
+                                    {{jun_case.CHARGE}}
+                                </td>
+                                <td>
+                                    {{jun_case.CLIENT_ID}}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
