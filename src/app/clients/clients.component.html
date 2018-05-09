@@ -20,25 +20,33 @@
                                 </tr>
                             </thead>
                             <tbody *ngFor="let client of clients">
-                                <tr (click)="toggle(client)">
-                                    <td class="col-md-3">
+                                <tr> 
+        
+                                    <td *ngIf="client.CLIENT_ID === EditRowID"><input type="text"[(ngModel)]="client.CLIENT_ID"/></td>
+                                    <td *ngIf="client.CLIENT_ID!== EditRowID" (click)="Edit(client.CLIENT_ID)" class="col-md-3">
                                         {{client.CLIENT_ID}}
                                     </td>
                                     <td class="col-md-3">
                                         {{client.CLIENT_NAME}}
                                     </td>
                                     <td class="col-md-3">
-                                        {{client.PHONE_NO}}
+                                        {{client.PHONE_NUMBER}}
                                     </td>
                                     <td class="col-md-3">
                                         {{client.EMAIL_ADDRESS}}
                                     </td>
+                                    <td class="col-md-3">
+                                       <div class="col-mid-3">
+                                            <a routerLink='/clients/detail/{{client.CLIENT_ID}}' class="btn btn-danger" style="float:right">update</a> 
+                                           <input type="button" (click)="deleteClients(client.CLIENT_ID)" value="Delete" class="btn btn-danger">
+                                       </div>
+                                    </td>
                                 </tr>
-                                <tr *ngIf="client.flag">
+                                <!--tr *ngIf="client.flag">
                                     <td colspan="4">
                                         <input type="text" [(ngModel)]=client.CLIENT_DESCRIPTION class="form-control">
                                     </td>
-                                </tr>
+                                </tr-->
                             </tbody>
                         </table>
 

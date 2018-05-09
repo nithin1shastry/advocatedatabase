@@ -4,31 +4,35 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header" data-background-color="red">
-            <h4 class="title">New Client</h4>
+            <h4 class="title">Client Detail</h4>
           </div>
           <div [hidden]="submitted" class="card-content">
-            <form (ngSubmit)="onSubmit()" #clientsadd="ngForm" (submit) ="addClients()">
+            <form (ngSubmit)="save()" #clientsadd="ngForm">
               <div class="row">
 
+                <!-- <div class="form-group">
+                  <label class="form-control-label" >Client ID</label>
+                  <input type ="text" class ="form-control" name ="client_id" id="client_id" [(ngModel)]="clientss[0].CLIENT_ID" />
+                </div> -->
                 <div class="col-md-3">
-                  <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Client ID</label>
-                    <input type="text" [(ngModel)]= "_id" name="_id" pattern="[0-9]*"class="form-control" required maxlength="5" #name="ngModel">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-  
+                  <div class="form-group">
+                    <label class="form-control-label">Client ID</label>
+                    <input type="text" [(ngModel)]="clientss[0].CLIENT_ID" name="_id" class="form-control" required maxlength="5">
+                    <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
                       <div *ngIf="name.errors.required">
                         Valid Client ID is required.
                       </div>
                       <div *ngIf="name.errors.maxlength">
                         ID must not exceed 5 characters.
                       </div>
-                      </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Client Name</label>
-                    <input type="email" [(ngModel)]= "client_name" name="client_name" class="form-control" required minlength="1" #name="ngModel">
+                    <label class="form-control-label">Client Name</label>
+                    <input type="email" [(ngModel)]="clientss[0].CLIENT_NAME" name="client_name" class="form-control" required minlength="5">
                   </div>
                 </div>
               </div>
@@ -36,8 +40,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Phone number</label>
-                    <input type="text" [(ngModel)]= "phone_no" name="phone_no" class="form-control" required maxlength="15" #name="ngModel">
+                    <label class="form-control-label">Phone number</label>
+                    <input type="text" [(ngModel)]="clientss[0].PHONE_NUMBER" name="phone_no" class="form-control" required maxlength="15">
                   </div>
                 </div>
 
@@ -45,8 +49,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Email address</label>
-                    <input type="text" [(ngModel)]= "email_address" name="email_address" class="form-control" required maxlength="30" #name="ngModel">
+                    <label class="form-control-label">Email address</label>
+                    <input type="text" [(ngModel)]="clientss[0].EMAIL_ADDRESS" name="email_address" class="form-control" required maxlength="30">
                   </div>
                 </div>
 

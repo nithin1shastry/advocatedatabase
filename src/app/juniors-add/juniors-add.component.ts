@@ -12,11 +12,14 @@ export class JuniorsAddComponent implements OnInit {
 
   juniors: any;
   junior: junior;
-  j_id:string;
+  j_id:number;
   junior_name: string;
   phone_no: string;
-  salary: string;
+  salary: number;
   email_address:string;
+  submitted = false;
+  onSubmit() { this.submitted = true; }
+
 
   constructor
   ( private juniorsaddservice: JuniorsService,

@@ -31,4 +31,27 @@ export class JuniorcaseService {
     return this.http.get('http://localhost:3000/api/jun_cases/'+id)
                     .map(res => res.json());
   }
+  //delete client
+  deleteJuniorCases(id) {
+    return this.http.delete('http://localhost:3000/api/jun_cases/' + id)
+      .map(res => res.json());
+  }
+
+  update(juncasdetail) {
+    console.log("the client sent is", juncasdetail)
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/api/jun_cases/update', juncasdetail, { headers: headers })
+      .map(res => res.json());
+  }
+
+  convertItemFromServer(json: any): jun_case {
+    const entity: jun_case = Object.assign(new jun_case(), json);
+    return entity;
+  }
+
+  private convert(juncasdetail: jun_case): jun_case {
+    const copy: jun_case = Object.assign({},juncasdetail);
+    return copy;
+  }
 }

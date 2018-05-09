@@ -18,6 +18,10 @@ import { JuniorcaseaddComponent } from './juniorcaseadd/juniorcaseadd.component'
 //import { ClientsAddComponent } from './clients-add/clients-add.component';
 import { JuniorsAddComponent } from './juniors-add/juniors-add.component';
 import { ClientsAddComponent } from './clients-add/clients-add.component';
+import { CaseDetailComponentComponent } from './case-detail-component/case-detail-component.component';
+import { ClientDetailComponentComponent } from './client-detail-component/client-detail-component.component';
+import { JuniorCaseDetailComponent } from './junior-case-detail/junior-case-detail.component';
+import { JuniorDetailComponent } from './junior-detail/junior-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { ClientsAddComponent } from './clients-add/clients-add.component';
     JuniorcaseaddComponent,
     ClientsAddComponent,
     JuniorsAddComponent,
+    CaseDetailComponentComponent,
+    ClientDetailComponentComponent,
+    JuniorCaseDetailComponent,
+    JuniorDetailComponent,
   ],
   imports: [
     BrowserModule,

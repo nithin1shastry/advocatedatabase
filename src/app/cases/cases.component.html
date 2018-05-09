@@ -15,12 +15,13 @@
                                     <th>Case ID</th>
                                     <th>Case title</th>
                                     <th>Case status</th>
-                                    <th>CLIENT ID</th>
                                     <th>Charges</th>
+                                    <th>Client ID</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr *ngFor="let cas of cases">
+                            <tbody *ngFor="let cas of cases">
+                                <tr>
+                                    <!--a routerLink='/cases/detail/{{cas.CASE_ID}}' class="btn btn-muted-warning" style="float:left">update</a-->
                                     <td>
                                         {{cas.CASE_ID}}
                                     </td>
@@ -31,11 +32,17 @@
                                         {{cas.CASE_STATUS}}
                                     </td>
                                     <td>
-                                        {{cas.CLIENT_ID}}
+                                        {{cas.CHARGES}}
                                     </td>
                                     <td>
-                                        {{cas.CHARGE}}
+                                        {{cas.CLIENT_ID}}
                                     </td>
+                                    <td class="col-md-3">
+                                            <div class="col-mid-3">
+                                                <a routerLink='/cases/jundetail/{{cas.CASE_ID}}' class="btn btn-danger" style="float:right">update</a>
+                                                <input type="button" (click)="deleteSeniorCases(cas.CASE_ID)" value="Delete" class="btn btn-danger">
+                                            </div>
+                                         </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,20 +80,26 @@
                                     {{jun_case.JUNIOR_NAME}}
                                 </td>
                                 <td>
-                                    {{jun_case.CASE_ID}}
+                                    {{jun_case.JUNIOR_CASE_ID}}
                                 </td>
                                 <td>
-                                    {{jun_case.CASE_TITLE}}
+                                    {{jun_case.JUNIOR_CASE_TITLE}}
                                 </td>
                                 <td>
-                                    {{jun_case.CASE_STATUS}}
+                                    {{jun_case.JUNIOR_CASE_STATUS}}
                                 </td>
                                 <td>
-                                    {{jun_case.CHARGE}}
+                                    {{jun_case.JUNIOR_CHARGE}}
                                 </td>
                                 <td>
                                     {{jun_case.CLIENT_ID}}
                                 </td>
+                                <td class="col-md-3">
+                                    <div class="col-mid-3">
+                                         <a routerLink='/cases/detail/{{jun_case.JUNIOR_ID}}' class="btn btn-danger" style="float:right">update</a>
+                                        <input type="button" (click)="deleteJuniorCases(jun_case.CLIENT_ID)" value="Delete" class="btn btn-danger"/>
+                                    </div>
+                                 </td>
                             </tr>
 
                         </tbody>

@@ -16,6 +16,8 @@ export class ClientsAddComponent implements OnInit {
   client_name: string;
   phone_no: string;
   email_address: string;
+  submitted = false;
+  onSubmit() { this.submitted = true; }
   constructor(
     private clientsaddservice: ClientsService,
     private location: Location

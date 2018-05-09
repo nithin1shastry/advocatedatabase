@@ -6,20 +6,28 @@
             <div class="card-header" data-background-color="red">
               <h4 class="title">Add Junior Case</h4>
             </div>
-            <div class="card-content">
-              <form>
+            <div  [hidden]="submitted" class="card-content">
+              <form (submit) = "onSubmit()" #juniorcaseadd="ngForm" (submit) ="addJunCases()">
                 <div class="row">
-  
                   <div class="col-md-3">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Junior Name</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Junior ID</label>
+                      <input type="text" [(ngModel)]= "j_id" name="j_id" pattern="[0-9]*" class="form-control" required maxlength="5" #name="ngModel">
+                      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                        <div *ngIf="name.errors.required">
+                          Valid ID is required.
+                        </div>
+                        <div *ngIf="name.errors.maxlength">
+                          ID must not exceed 5 characters.
+                        </div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Junior ID</label>
-                      <input type="email" class="form-control">
+                      <label class="control-label">Junior NAME</label>
+                      <input type="email" [(ngModel)]= "j_name" name="j_name" class="form-control" required minlength="1" maxlength="50" #name="ngModel">
                     </div>
                   </div>
                 </div>
@@ -27,14 +35,23 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Case Title</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Case Id</label>
+                      <input type="text" [(ngModel)]= "jcase_id" name="jcase_id" class="form-control" pattern="[0-9]*" required maxlength="5" #name="ngModel">
                     </div>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                      <div *ngIf="name.errors.required">
+                        Valid ID is required.
+                      </div>
+                      <div *ngIf="name.errors.maxlength">
+                        ID must not exceed 5 characters.
+                      </div>
+                      </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Case ID</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Case Title</label>
+                      <input type="text" [(ngModel)]= "jcase_title" name="jcase_title" class="form-control" required minlength="1" maxlength="50" #name="ngModel">
                     </div>
                   </div>
                 </div>
@@ -42,8 +59,8 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Client Name</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Case Status</label>
+                      <input type="text" [(ngModel)]= "jcase_status" name="jcase_status"class="form-control" required minlength="1" maxlength="50" #name="ngModel">
                     </div>
                   </div>
                 </div>
@@ -51,22 +68,19 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Status</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Charges</label>
+                      <input type="text" [(ngModel)]= "jcharge" name="jcharge" pattern ="[0-9]*" class="form-control" required maxlength="8" #name="ngModel">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Charges</label>
-                      <input type="text" class="form-control">
+                      <label class="control-label">Client_Id</label>
+                      <input type="text" [(ngModel)]= "jclient_id" name="jclient_id" pattern ="[0-9]*" class="form-control" required maxlength="5" #name="ngModel">
                     </div>
                   </div>
   
                 </div>
-  
-  
-  
-                <button type="submit" class="btn btn-danger pull-right">ADD</button>
+                <button type="submit" class="btn btn-danger pull-right" [disabled]="!juniorcaseadd.form.valid">ADD</button>
                 <div class="clearfix"></div>
               </form>
             </div>

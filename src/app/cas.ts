@@ -1,6 +1,9 @@
-export class cas{
-case_id:string;
-case_title: string;
-case_status: string;
-charge: string;
+export class cas {
+    constructor(
+        public CASE_ID?: number,
+        public CASE_TITLE?: string,
+        public CASE_STATUS?: string,
+        public CHARGES?: number,
+        public CLIENT_ID?: number,
+    ) {}
 }

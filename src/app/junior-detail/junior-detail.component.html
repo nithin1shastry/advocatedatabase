@@ -1,0 +1,82 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Update Junior</h4>
+          </div>
+          <div [hidden]="submitted" class="card-content">
+            <form (ngSubmit)="save()" #juniordetail[0]="ngForm">
+              <div class="row">
+                <!-- <div class="form-group">
+                  <label class="form-control-label" >Client ID</label>
+                  <input type ="text" class ="form-control" name ="client_id" id="client_id" [(ngModel)]="clientss[0].CLIENT_ID" />
+                </div> -->
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="form-control-label">JUNIOR ID</label>
+                    <input type="text" [(ngModel)]="juniordetail[0].JUNIOR_ID" name="j_id" class="form-control" required maxlength="5">
+                    <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                      <div *ngIf="name.errors.required">
+                        Valid ID is required.
+                      </div>
+                      <div *ngIf="name.errors.maxlength">
+                        ID must not exceed 5 characters.
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="form-control-label">JUNIOR NAME</label>
+                    <input type="text" [(ngModel)]="juniordetail[0].JUNIOR_NAME" name="junior_name" class="form-control" required minlength="1">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="form-control-label">PHONE NUMBER</label>
+                    <input type="text" [(ngModel)]="juniordetail[0].PHONE_NUMBER" name="phone_no" class="form-control" required maxlength="15"
+                     >
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="form-control-label">SALARY</label>
+                    <input type="text" [(ngModel)]="juniordetail[0].SALARY" name="salary" class="form-control" required maxlength="8">
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="form-control-label">EMAIL ADDRESS</label>
+                    <input type="text" [(ngModel)]="juniordetail[0].EMAIL_ADDRESS" name="email_address" class="form-control" required maxlength="20"
+                     >
+                  </div>
+                </div>
+
+              </div>
+              <button type="submit" class="btn btn-danger pull-right" [disabled]="!juniorsadd.form.valid">update</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

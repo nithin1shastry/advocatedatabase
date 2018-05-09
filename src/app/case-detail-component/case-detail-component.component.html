@@ -7,13 +7,13 @@
             <h4 class="title">Add My Cases</h4>
           </div>
           <div [hidden]="submitted" class="card-content">
-            <form (ngSubmit)="onSubmit()" #caseadd="ngForm" (submit)="addCases()">
+            <form (ngSubmit)="save()" #caseadd="ngForm">
               <div class="row">
 
                 <div class="col-md-3">
                   <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Case ID</label>
-                    <input id="case" type="text" [(ngModel)]="case_id" name="case_id" pattern="[0-9]*" class="form-control" required maxlength="5" #name="ngModel">
+                    <label class="form-control-label">Case ID</label>
+                    <input id="case" type="text" [(ngModel)]="seniorCases[0].CASE_ID" name="case_id" class="form-control" required maxlength="5" #name="ngModel">
                     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
 
                       <div *ngIf="name.errors.required">
@@ -27,8 +27,8 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Case title</label>
-                      <input type="email" [(ngModel)]="case_title" name="case_title" class="form-control" required minlength="1">
+                      <label class="form-control-label">Case title</label>
+                      <input type="email" [(ngModel)]="seniorCases[0].CASE_TITLE" name="case_title" class="form-control" required minlength="1">
                     </div>
                   </div>
                 </div>
@@ -36,23 +36,22 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Case Status</label>
-                      <input type="text" [(ngModel)]="case_status" name="case_status" class="form-control" required minlength="1">
+                      <label class="form-control-label">Case Status</label>
+                      <input type="text" [(ngModel)]="seniorCases[0].CASE_STATUS" name="case_status" class="form-control" required minlength="1">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Charges</label>
-                      <input type="text" [(ngModel)]="charges" name="charge" pattern="[0-9]*" class="form-control" required minlength="1">
+                      <label class="form-control-label">Charges</label>
+                      <input type="text" [(ngModel)]="seniorCases[0].CHARGES" name="cahrge" class="form-control" required minlength="1">
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group form-black label-floating is-empty">
-                      <label class="control-label">Client ID</label>
-                      <input type="text" [(ngModel)]="client_id" name="client_id" pattern="[0-9]*" class="form-control" required maxlength="5" #name="ngModel">
+                      <label class="form-control-label">Client ID</label>
+                      <input type="text" [(ngModel)]="seniorCases[0].CLIENT_ID"name="client_id" class="form-control" required maxlength="5" #name="ngModel">
                       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
   
                         <div *ngIf="name.errors.required">

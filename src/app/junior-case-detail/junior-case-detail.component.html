@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header" data-background-color="red">
+              <h4 class="title">Update Junior Case</h4>
+            </div>
+            <div  [hidden]="submitted" class="card-content">
+              <form (submit) = "save()">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Junior ID</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_ID" name="j_id" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Junior NAME</label>
+                      <input type="email" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_NAME" name="j_name" class="form-control">
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Case Id</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_CASE_ID" name="jcase_id" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Case Title</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_CASE_TITLE" name="jcase_title" class="form-control">
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Case Status</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_CASE_STATUS" name="jcase_status"class="form-control">
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Charges</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].JUNIOR_CHARGE" name="jcharge" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group form-black label-floating is-empty">
+                      <label class="form-control-label">Client_Id</label>
+                      <input type="text" [(ngModel)]= "juniorscasesdetail[0].CLIENT_ID" name="jclient_id" class="form-control">
+                    </div>
+                  </div>
+  
+                </div>
+                <button type="submit" class="btn btn-danger pull-right">UPDATE</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile">
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

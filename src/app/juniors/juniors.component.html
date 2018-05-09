@@ -29,7 +29,7 @@
                                     {{junior.JUNIOR_NAME}}
                                 </td>
                                 <td class="col-md-3">
-                                    {{junior.PHONE_NO}}
+                                    {{junior.PHONE_NUMBER}}
                                 </td>
                                 <td class="col-md-3">
                                     {{junior.SALARY}}
@@ -37,6 +37,12 @@
                                 <td class="col-md-3">
                                     {{junior.EMAIL_ADDRESS}}
                                 </td>
+                                <td class="col-md-3">
+                                    <div class="col-mid-3">
+                                            <a routerLink='/juniors/detail/{{junior.JUNIOR_ID}}' class="btn btn-danger" style="float:right">update</a>
+                                        <input type="button" (click)="deleteJuniors(junior.JUNIOR_ID)" value="Delete" class="btn btn-danger">
+                                    </div>
+                                 </td>
                                 </tr>
                           </tbody>
                       </table>

@@ -1,7 +1,9 @@
 export class junior{
-    j_id:string;
-    junior_name: string;
-    phone_no: string;
-    salary: string;
-    email_address:string;
+    constructor(
+     public JUNIOR_ID?:number,
+     public JUNIOR_NAME?: string,
+     public PHONE_NUMBER?: string,
+     public SALARY?: number,
+     public EMAIL_ADDRESS?:string,
+    ){}
 }

@@ -21,14 +21,38 @@ export class CasService {
   {
      var headers = new Headers();
      headers.append('Content-Type','application/json');
-     return this.http.post('http://localhost:3000/api/cases',newClient,{headers:headers})
+     return this.http.post('http://localhost:3000/api/mycases',newClient,{headers:headers})
                 .map(res => res.json());
   }
 
   //retrieve particular id
   getCasesByID(id)
   {
-    return this.http.get('http://localhost:3000/api/casess/'+id)
+    return this.http.get('http://localhost:3000/api/mycases/'+id)
                     .map(res => res.json());
+  }
+
+   //delete senior casses
+   deleteSeniorCases(case_id) {
+    return this.http.delete('http://localhost:3000/api/mycases/' + case_id)
+      .map(res => res.json());
+  }
+
+  update(sen_case) {
+    console.log("the case sent is", sen_case)
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/api/mycases/update', sen_case, { headers: headers })
+      .map(res => res.json());
+  }
+
+  convertItemFromServer(json: any): cas {
+    const entity: cas = Object.assign(new cas(), json);
+    return entity;
+  }
+
+  private convert(sen_case: cas): cas {
+    const copy: cas = Object.assign({},sen_case);
+    return copy;
   }
 }
